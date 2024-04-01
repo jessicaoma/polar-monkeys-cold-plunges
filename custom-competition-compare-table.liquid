@@ -1,0 +1,432 @@
+{{ 'styles-custom-table.css' | asset_url | stylesheet_tag }}
+
+<script type="module">
+  import { coldPlungesProducts } from '{{ 'cold-plunges-products.js' | asset_url }}';
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    //Set the dropdown options
+    let productOptions=[];
+    for (var key in coldPlungesProducts) {
+      var val = coldPlungesProducts[key];
+      const obj = {"val": key, "title": val.metafields.title};
+      productOptions = [...productOptions, obj];
+    }
+    
+
+    const ownColumn = document.getElementById('column-0' );
+    
+    const own = coldPlungesProducts[Object.keys(coldPlungesProducts)[0]].metafields;
+
+    var select = document.getElementById("ct-dropwdown-column-0");
+    //-------------- Assign data --------
+    for(var i = 0; i < productOptions.length; i++) {
+        var opt = productOptions[i];
+        var el = document.createElement("option");
+        el.textContent = productOptions[i].title;
+        el.value = productOptions[i].val;
+        el.selected = productOptions[i].val === coldPlungesProducts[Object.keys(coldPlungesProducts)[0]].key;
+        if(select){
+          select.appendChild(el);
+        }
+    }
+
+    const thumbnail = ownColumn.getElementsByClassName( 'ct-thumbnail' )[0].getElementsByClassName('ct-thumbnail-img')[0];
+    thumbnail.src = own.thumbnail;
+
+    const variants = ownColumn.getElementsByClassName( 'ct-variants' )[0];
+    variants.innerHTML = own.variants;
+
+    const price = ownColumn.getElementsByClassName( 'ct-price' )[0];
+    price.textContent = own.price;
+
+
+    //--- Features ---/
+
+    const coolingPower = ownColumn.getElementsByClassName( 'ct-feature-coolingPower' )[0];
+    coolingPower.innerHTML = own.coolingPower;
+
+    //---SHOP NOW-/
+    const shopNow = ownColumn.getElementsByClassName( 'ct-shop-now' )[0];
+    shopNow.href = own.link;
+    
+    
+  }, false);
+  
+  window.changeProduct = function changeProduct(component) {
+  
+      const url = component.value;
+  
+      //-------------- Work with selected data --------
+      const column = document.getElementById('column-0' );
+      const object = coldPlungesProducts[url].metafields;
+
+
+      const thumbnail = column.getElementsByClassName( 'ct-thumbnail' )[0].getElementsByClassName('ct-thumbnail-img')[0];
+      thumbnail.src = object.thumbnail;
+
+      const variants = column.getElementsByClassName( 'ct-variants' )[0];
+      variants.innerHTML = object.variants;
+
+      const price = column.getElementsByClassName( 'ct-price' )[0];
+      price.textContent = object.price;
+
+
+      //--- Features ---/
+
+
+      const coolingPower = column.getElementsByClassName( 'ct-feature-coolingPower' )[0];
+      coolingPower.innerHTML = object.coolingPower;
+
+      //---SHOP NOW-/
+      const shopNow = column.getElementsByClassName( 'ct-shop-now' )[0];
+      shopNow.href = object.link;
+  
+    }
+</script>
+
+<div class="custom-compare-table__container">
+  <div class="custom-compare-table__header">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+
+  <div class="custom-compare-table__body">
+    <div class="ct-table">
+       <!----------------------- Our Products ----------------------->
+        <div class="ct-product-column competition" id="column-0">
+          <div class="product-item">
+            <div class="product__media-item">
+              <!-- ------- Dropdown --------- -->
+              <div class="ct-dropdown">
+                <select
+                  id="ct-dropwdown-column-0"
+                  name="ct-dropdown"
+                  onchange="changeProduct(this)"
+                  autocomplete="off"
+                >
+                </select>
+              </div>
+              <!-- --------- End Dropdown --------- -->
+
+              <!-- Subtitle -->
+              <div class="ct-subtitle">
+              </div>
+
+              <!-- Transparent Image -->
+              <div class="ct-thumbnail">
+                  <img src="/" class="ct-thumbnail-img" width="280px" height="100%">
+              </div>
+
+              <!-- Variants -->
+              <div class="ct-variants">
+                <div class="ct-variants-colors">
+                </div>
+              </div>
+              <!-- ------------------------- Separator ---------------------------- -->
+
+              <div class="ct-separator"></div>
+
+              <!-- Price -->
+              <div class="ct-price-title">Starting at</div>
+
+              <div class="ct-price"></div>
+
+              <!-- -------------------------------- Separator ----------------------------- -->
+
+              <div class="ct-separator"></div>
+
+              <div id="ct-features">
+                <!-- Cooling Power -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/cooling-power-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title">
+                      <p style="margin-bottom:20px !important">Cooling Power</p>
+                      <span class="ct-feature-coolingPower"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Heater Included -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/heats-to-icon.svg?v=1710617271"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Heater Included</p>
+                      <span class="ct-feature-heater">YES</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Artists&Designs -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/artists-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                       <p style="margin-bottom:20px !important">Artist Designs</p>
+                      <span class="ct-feature-artists">YES</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Smartphone Connectivity -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/connectivity-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Smartphone Connectivity</p>
+                      <span class="ct-feature-connectivity">YES</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Quieter Experience -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/quieter.png?v=1711580055"
+                      width="55px"
+                      height="55px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Quieter Experience</p>
+                      <span class="ct-feature-quieter">YES</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Broad Lineup of Models -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/warranty-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Broad Lineup of Models</p>
+                      <span class="ct-feature-models">YES</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Insulated Tub Cover -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/tubCover.png?v=1711566935"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Insulated Tub Cover</p>
+                      <span class="ct-feature-models">YES</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fin -->
+            </div>
+            <a href="#" class="ct-shop-now" target="_blank">SHOP NOW</a>
+          </div>
+        </div>
+
+
+      <!----------------------- Competition Products ----------------------->
+      
+      <div class="ct-product-column competition" id="column-1">
+          <div class="product-item">
+            <div class="product__media-item">
+              <!-- ------- Dropdown --------- -->
+              <div class="ct-dropdown">
+                <select
+                  id="ct-dropwdown-column-1"
+                  name="ct-dropdown"
+                  onchange="changeProduct(this)"
+                  autocomplete="off"
+                  disabled
+                >
+                  <option>The Plunge</option>
+                </select>
+              </div>
+              <!-- --------- End Dropdown --------- -->
+
+              <!-- Subtitle -->
+              <div class="ct-subtitle">
+              </div>
+
+              <!-- Transparent Image -->
+              <div class="ct-thumbnail">
+                  <img src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/the-plunge-thumb.png" class="ct-thumbnail-img" width="280px" height="100%">
+              </div>
+
+              <!-- Variants -->
+              <div class="ct-variants">
+                <div class="ct-variants-colors">
+                </div>
+              </div>
+              <!-- ------------------------- Separator ---------------------------- -->
+
+              <div class="ct-separator"></div>
+
+              <!-- Price -->
+              <div class="ct-price-title">Starting at</div>
+
+              <div class="ct-price">$4,990.00</div>
+
+              <!-- -------------------------------- Separator ----------------------------- -->
+
+              <div class="ct-separator"></div>
+
+               <div id="ct-features">
+                <!-- Cooling Power -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/cooling-power-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title">
+                      <p style="margin-bottom:20px !important">Cooling Power</p>
+                      <span class="ct-feature-coolingPower">0.25 HP</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Heater Included -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/heats-to-icon.svg?v=1710617271"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Heater Included</p>
+                      <span class="ct-feature-heater">NO</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Artists&Designs -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/artists-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                       <p style="margin-bottom:20px !important">Artist Designs</p>
+                      <span class="ct-feature-artists">NO</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Smartphone Connectivity -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/connectivity-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Smartphone Connectivity</p>
+                      <span class="ct-feature-connectivity">NO</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Quieter Experience -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/quieter.png?v=1711580055"
+                      width="55px"
+                      height="55px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Quieter Experience</p>
+                      <span class="ct-feature-quieter">NO</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Broad Lineup of Models -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/warranty-icon.svg"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Broad Lineup of Models</p>
+                      <span class="ct-feature-models">NO</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Insulated Tub Cover -->
+                <div class="ct-feature">
+                  <div class="cf-feature-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0566/7173/1844/files/tubCover.png?v=1711566935"
+                      width="35px"
+                      height="35px"
+                    >
+                    <div class="ct-feature-title ">
+                      <p style="margin-bottom:20px !important">Insulated Tub Cover</p>
+                      <span class="ct-feature-models">NO</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fin -->
+            </div>
+          </div>
+        </div>
+      
+       
+  
+    </div>
+  </div>
+</div>
+
+<script></script>
+
+{% schema %}
+{
+  "name": "Custom Competition Table",
+  "class": "custom_competition_table",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Competition Tables",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
