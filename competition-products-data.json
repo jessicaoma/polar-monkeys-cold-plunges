@@ -1,0 +1,25 @@
+export const competitionProducts = {
+    "the-plunge": {
+      "metafields": {
+        "title": "The Plunge",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0566/7173/1844/files/the-plunge-thumb.png?v=1711579750",
+        "variants": "<div class='ct-variants-colors'></div> ",
+        "details": "-",
+        "description": "-",
+        "price": "$4.990.00",
+        "link": "#",
+        "dimensions": "",
+        "coolsTo": "",
+        "heatsTo": "",
+        "coolingPower": "0.25 HP",
+        "setupTime": "-",
+        "outdoorUse": "-",
+        "filter": "-",
+        "sanitation": "Chlorine-Free Sanitation Kit Available",
+        "connectivity": "Smartphone connectivity",
+        "artists": "Artist designs available",
+        "insulation": "<p style='margin-bottom: 20px'>Not insulated<\/p><p>May condensate<\/p>",
+        "warranty": "1-year warranty. Visit the FAQs section for more information."
+      }
+    },
+  }
