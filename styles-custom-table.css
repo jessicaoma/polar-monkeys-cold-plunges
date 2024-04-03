@@ -1,259 +1,268 @@
 .custom-compare-table__container {
-    background: white;
-    margin-bottom: 3rem
-  }
-  .custom-compare-table__header {
-    margin-bottom: 2rem;
-  }
-  .custom-compare-table__header h2 {
-    text-align: center;
-    padding: 30px 0;
-  }
+  background: white;
+  margin-bottom: 3rem
+}
+.custom-compare-table__header {
+  margin-bottom: 2rem;
+}
+.custom-compare-table__header h2 {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.ct-table {
+  display: flex;
+  gap: 10px;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
+}
+.ct-separator {
+  border-bottom: 2px solid #969696;
+  width: 80%;
+  margin: 2.5rem auto;
+}
+.ct-thumbnail {
+  margin-bottom: 1rem;
+}
+.ct-subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 1rem 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+.ct-price-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.ct-price {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.ct-buy-button {
+  background-color: #0b2c42;
+  color: white;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 14px;
+  margin: 1rem auto;
+}
+.ct-description {
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0 18px;
+  min-height: 142px;
+  display: flex;
+  align-items: center
+}
+.ct-product-column {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  flex: 1 1 0px;
+  transition: all 0.5s;
+  max-width: calc( 25% - 10px );
+}
+.ct-product-column.competition{
+  max-width: 50%;
+}
+.ct-product-column:hover {
+  box-shadow: 0 0 5px rgba(0,0,0,5%)
+}
+.ct-feature {
+  margin: 2.8rem 0;
+  min-height: 94px;
+}
+.cf-feature-icon {
+}
+.ct-feature-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 10px;
+  min-height: 38px;
+  padding: 0;
   
-  .ct-table {
-    display: flex;
-    gap: 10px;
-    max-width: 1000px;
-    margin: auto;
-    width: 100%;
-  }
-  .ct-separator {
-    border-bottom: 2px solid #969696;
-    width: 80%;
-    margin: 2.5rem auto;
-  }
-  .ct-thumbnail {
-    margin-bottom: 1rem;
+}
+.ct-shop-now {
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.ct-shop-now:hover {
+  background: #333;
+}
+/* ---- Dropdown ----*/
+.ct-dropdown{
+  position: relative;
+  max-width: 100%;
+}
+
+.ct-dropdown select {
+  appearance: none;
+  /*  safari  */
+  -webkit-appearance: none;
+  /*  other styles for aesthetics */
+  width: 100%;
+  font-size: 15px;
+  padding: .67em 1em .67em 1em;
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: left;
+}
+
+.ct-dropdown::before,
+.ct-dropdown::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.ct-dropdown::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+}
+
+.ct-dropdown::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
+}
+/* ---------- Color Variants ---------- */
+.ct-variants-colors {
+  min-height: 60px;
+  maring-top: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.ct-variants-colors .ct-swatch-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px
+}
+.ct-swatch {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.ct-swatch label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 38px;
+  height: 31px;
+}
+.ct-swatch .ct-swatch__item--image{
+  margin-bottom: 0!important;
+  width: 25px!important;
+  height: 25px!important;
+  background-size: cover!important;
+  border: 1px solid #0ff;
+  border-radius: 50px;
+  padding: 1px;
+}
+.ct-swatch .ct-swatch__item span{
+  padding: 0;
+  color: #333;
+  font-size: 8.6px;
+  text-align: center;
+  line-height: 1.1;
+}
+.ct-swatch .ct-swatch__item--image {
+  border-radius: 100px;
+}
+.ct-swatch__color--silver .ct-swatch__item--image{
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/new-variant-silver-imagen-v2.png');
+}
+.ct-swatch__color--black .ct-swatch__item--image {
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/new-variant-black-imagen-v2.png');
+}
+.ct-swatch__color--monkeyverse .ct-swatch__item--image {
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/color-monkeyverse.png');
+}
+.ct-swatch__color--bones .ct-swatch__item--image {
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/bones-v2.png');
+}
+.ct-swatch__color--fear-of-god .ct-swatch__item--image {
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/image-variant-fear-of-god.png');
+}
+.ct-swatch__color--tranquility-base .ct-swatch__item--image {
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/image-variant-tranquility-base.png');
+}
+.ct-swatch__color--white .ct-swatch__item--image {
+   background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/new-variant-white-imagen-v2.png');
+}
+.ct-swatch__color--light-brown .ct-swatch__item--image {
+    background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/color-light-brown-star.png');
+}
+.ct-swatch__color--dark-brown .ct-swatch__item--image {
+    background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/color-dark-brown-star.png');
+}
+.ct-swatch__color--wood .ct-swatch__item--image {
+    background: url('https://polarmonkeys.com/cdn/shop/files/star-wood.png');
+}
+.ct-swatch__color--grey .ct-swatch__item--image {
+    background: url('https://polarmonkeys.com/cdn/shop/files/star-grey.png');
+}
+@media (max-width: 1397px){
+  .ct-dropdown select{
+    font-size: 1rem;
   }
   .ct-subtitle {
-    font-size: 13px;
-    font-weight: 700;
-    margin: 1rem 0;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-  }
-  .ct-price-title {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .ct-price {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-  .ct-buy-button {
-    background-color: #0b2c42;
-    color: white;
-    border-radius: 50px;
-    padding: 8px 20px;
-    font-size: 14px;
-    margin: 1rem auto;
+    min-height: 46px;
   }
   .ct-description {
-    font-size: 13px;
-    text-align: center;
-    line-height: 1.3;
-    padding: 0 18px;
-    min-height: 142px;
+    min-height: 120px;
+    padding
+  }
+}
+@media (max-width: 767px){
+  .ct-table {
     display: flex;
-    align-items: center
-  }
-  .ct-product-column {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    flex: 1 1 0px;
-    transition: all 0.5s;
-    max-width: calc( 25% - 10px );
-  }
-  .ct-product-column.competition{
-    max-width: 50%;
-  }
-  .ct-product-column:hover {
-    box-shadow: 0 0 5px rgba(0,0,0,5%)
-  }
-  .ct-feature {
-    margin: 3rem 0;
-  }
-  .cf-feature-icon {
-  }
-  .ct-feature-title {
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-top: 10px;
-    min-height: 35px;
-    padding: 0;
-    
-  }
-  .ct-shop-now {
-    background: black;
-    color: white;
-    border-radius: 10px;
-    padding: 15px 25px;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .ct-shop-now:hover {
-    background: #333;
-  }
-  /* ---- Dropdown ----*/
-  .ct-dropdown{
-    position: relative;
-    max-width: 100%;
-  }
-  
-  .ct-dropdown select {
-    appearance: none;
-    /*  safari  */
-    -webkit-appearance: none;
-    /*  other styles for aesthetics */
-    width: 100%;
-    font-size: 15px;
-    padding: .67em 1em .67em 1em;
-    background-color: #fff;
-    border: 1px solid #caced1;
-    border-radius: 0.25rem;
-    color: #000;
-    cursor: pointer;
-    font-weight: 700;
-    text-align: left;
-  }
-  
-  .ct-dropdown::before,
-  .ct-dropdown::after {
-    --size: 0.3rem;
-    content: "";
-    position: absolute;
-    right: 1rem;
-    pointer-events: none;
-  }
-  
-  .ct-dropdown::before {
-    border-left: var(--size) solid transparent;
-    border-right: var(--size) solid transparent;
-    border-bottom: var(--size) solid black;
-    top: 40%;
-  }
-  
-  .ct-dropdown::after {
-    border-left: var(--size) solid transparent;
-    border-right: var(--size) solid transparent;
-    border-top: var(--size) solid black;
-    top: 55%;
-  }
-  /* ---------- Color Variants ---------- */
-  .ct-variants-colors {
-    min-height: 60px;
-    maring-top: 1rem;
+    gap: 2px;
+    padding: 5px;
     max-width: 100%;
     overflow-x: auto;
   }
-  .ct-variants-colors .ct-swatch-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1px
+  
+  .ct-product-column,
+  .ct-product-column.competition{
+    padding: 2px;
+    width: 50%;
+    min-width: 50%;
   }
-  .ct-swatch {
-    padding: 1px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+  .ct-subtitle {
+    min-height: 68px;
   }
-  .ct-swatch label {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 38px;
-    height: 31px;
-  }
-  .ct-swatch .ct-swatch__item--image{
-    margin-bottom: 0!important;
-    width: 25px!important;
-    height: 25px!important;
-    background-size: cover!important;
-    border: 1px solid #0ff;
-    border-radius: 50px;
-    padding: 1px;
-  }
-  .ct-swatch .ct-swatch__item span{
+  .ct-description {
+    min-height: 150px;
     padding: 0;
-    color: #333;
-    font-size: 8.6px;
-    text-align: center;
-    line-height: 1.1;
   }
-  .ct-swatch .ct-swatch__item--image {
-    border-radius: 100px;
+  .ct-thumbnail-img {
+    max-height: 78px;
+    width: auto;
   }
-  .ct-swatch__color--silver .ct-swatch__item--image{
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/new-variant-silver-imagen-v2.png');
-  }
-  .ct-swatch__color--black .ct-swatch__item--image {
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/new-variant-black-imagen-v2.png');
-  }
-  .ct-swatch__color--monkeyverse .ct-swatch__item--image {
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/color-monkeyverse.png');
-  }
-  .ct-swatch__color--bones .ct-swatch__item--image {
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/bones-v2.png');
-  }
-  .ct-swatch__color--fear-of-god .ct-swatch__item--image {
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/image-variant-fear-of-god.png');
-  }
-  .ct-swatch__color--tranquility-base .ct-swatch__item--image {
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/image-variant-tranquility-base.png');
-  }
-  .ct-swatch__color--white .ct-swatch__item--image {
-     background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/new-variant-white-imagen-v2.png');
-  }
-  .ct-swatch__color--light-brown .ct-swatch__item--image {
-      background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/color-light-brown-star.png');
-  }
-  .ct-swatch__color--dark-brown .ct-swatch__item--image {
-      background: url('https://cdn.shopify.com/s/files/1/0566/7173/1844/files/color-dark-brown-star.png');
-  }
-  .ct-swatch__color--wood .ct-swatch__item--image {
-      background: url('https://polarmonkeys.com/cdn/shop/files/star-wood.png');
-  }
-  .ct-swatch__color--grey .ct-swatch__item--image {
-      background: url('https://polarmonkeys.com/cdn/shop/files/star-grey.png');
-  }
-  @media (max-width: 1397px){
-    .ct-dropdown select{
-      font-size: 1rem;
-    }
-    .ct-subtitle {
-      min-height: 46px;
-    }
-    .ct-description {
-      min-height: 120px;
-      padding
-    }
-  }
-  @media (max-width: 767px){
-    .ct-table {
-      display: flex;
-      gap: 2px;
-      padding: 5px;
-      max-width: 100%;
-      overflow-x: auto;
-    }
-    
-    .ct-product-column,
-    .ct-product-column.competition{
-      padding: 2px;
-      max-width: 50%
-    }
-    .ct-description {
-      min-height: 150px;
-      padding: 0;
-    }
-  }
+}

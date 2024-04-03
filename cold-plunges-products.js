@@ -123,7 +123,7 @@ export const coldPlungesProducts = {
         'Crafted to perfection and built to last, this fully insulated, generously sized masterpiece boasts unbeatable self-cooling technology proudly made in the USA.',
       coolsTo: 'Cools To 39°/ 4°C',
       heatsTo:
-        "<p style='margin-bottom: 20px;min-height:23px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
+        "<p style='margin-bottom: 20px;min-height:21px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
       coolingPower: 'Cooling Power Pro 0.8 HP',
       electricalRequirements: 'Regular 120V',
       plumbingRequirements: 'No plumbing required',
@@ -159,7 +159,7 @@ export const coldPlungesProducts = {
         'Commercial-grade cooling and filtration systems designed to deliver the transformative power of cold therapy to your customers.',
       coolsTo: 'Cools To 39°/ 4°C',
       heatsTo:
-        "<p style='margin-bottom: 20px;min-height:23px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
+        "<p style='margin-bottom: 20px;min-height:21px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
       coolingPower: 'Cooling Power Pro 0.8 HP',
       electricalRequirements: 'Regular 120V',
       plumbingRequirements: 'No plumbing required',
@@ -195,7 +195,7 @@ export const coldPlungesProducts = {
         'Commercial-grade cooling and filtration systems designed to deliver the transformative power of cold therapy to your customers.',
       coolsTo: 'Cools To 39°/ 4°C',
       heatsTo:
-        "<p style='margin-bottom: 20px;min-height:23px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
+        "<p style='margin-bottom: 20px;min-height:21px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
       coolingPower: 'Cooling Power Pro 0.8 HP',
       electricalRequirements: 'Regular 120V',
       plumbingRequirements: 'No plumbing required',
@@ -231,7 +231,7 @@ export const coldPlungesProducts = {
         'Commercial-grade cooling and filtration systems designed to deliver the transformative power of cold therapy to your customers.',
       coolsTo: 'Cools To 39°/ 4°C',
       heatsTo:
-        "<p style='margin-bottom: 20px;min-height:23px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
+        "<p style='margin-bottom: 20px;min-height:21px'>-</p><p style='font-size: 12px;font-weight:300'>Ambient temperatures may affect these values</p>",
       coolingPower: 'Cooling Power Pro 0.8 HP',
       electricalRequirements: 'Regular 120V',
       plumbingRequirements: 'No plumbing required',
