@@ -221,8 +221,8 @@
       {% for i in (1..4) %}
         {% assign column = forloop.index0 %}
         <div class="ct-product-column" id="column-{{ column }}">
-          <div class="product-item">
-            <div class="product__media-item">
+          <div class="ct-product-item">
+            <div class="ct-product__media-item">
               <!-- ------- Dropdown --------- -->
               <div class="ct-dropdown">
                 <select
@@ -260,7 +260,7 @@
 
               <div class="ct-price"></div>
 
-              <a target="_blank" href="{{ product.url }}" class="ct-buy-button">Buy</a>
+              <a target="_blank" href="#" class="ct-buy-button">Buy</a>
               <!-- -------------------------------- Separator ----------------------------- -->
               <div class="ct-separator"></div>
 
@@ -513,7 +513,9 @@
               </div>
               <!-- Fin -->
             </div>
-            <a href="#" class="ct-shop-now">SHOP NOW</a>
+             <div class="ct-separator"></div>
+              <!-- ----------------------------------- Separator ----------------------- -->
+            <a href="#" class="ct-shop-now">Buy</a>
           </div>
         </div>
       {% endfor %}

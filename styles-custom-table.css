@@ -1,6 +1,7 @@
 .custom-compare-table__container {
   background: white;
-  margin-bottom: 3rem
+  margin-bottom: 3rem;
+  margin-top: -1rem;
 }
 .custom-compare-table__header {
   margin-bottom: 2rem;
@@ -25,6 +26,9 @@
 .ct-thumbnail {
   margin-bottom: 1rem;
 }
+.ct-variants {
+  padding: 0 20px;
+}
 .ct-subtitle {
   font-size: 13px;
   font-weight: 700;
@@ -43,7 +47,7 @@
   margin-bottom: 1.5rem;
 }
 .ct-buy-button {
-  background-color: #0b2c42;
+  background-color: #00bfff;
   color: white;
   border-radius: 50px;
   padding: 8px 20px;
@@ -63,7 +67,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 20px;
+  padding: 4px;
   border-radius: 5px;
   text-align: center;
   flex: 1 1 0px;
@@ -92,15 +96,16 @@
   
 }
 .ct-shop-now {
-  background: black;
+  background: #00bfff;
   color: white;
-  border-radius: 10px;
+  border-radius: 59px;
   padding: 15px 25px;
   font-size: 20px;
   font-weight: 700;
+  transition: 0.5s all;
 }
 .ct-shop-now:hover {
-  background: #333;
+  background: #0b2c42;
 }
 /* ---- Dropdown ----*/
 .ct-dropdown{
@@ -115,7 +120,7 @@
   /*  other styles for aesthetics */
   width: 100%;
   font-size: 15px;
-  padding: .67em 1em .67em 1em;
+  padding: .67em 1.6em 0.67em 0.67em;
   background-color: #fff;
   border: 1px solid #caced1;
   border-radius: 0.25rem;
@@ -130,7 +135,7 @@
   --size: 0.3rem;
   content: "";
   position: absolute;
-  right: 1rem;
+  right: 5%;
   pointer-events: none;
 }
 
@@ -264,5 +269,9 @@
   .ct-thumbnail-img {
     max-height: 78px;
     width: auto;
+  }
+  .ct-dropdown select {
+    font-size: 0.75rem;
+    padding: 0.67rem 1.5rem 0.67rem 0.67rem;
   }
 }
