@@ -20,7 +20,6 @@
         const object = val.metafields;
 
         var select = document.getElementById("ct-dropwdown-column-"+ columnId);
-        console.log(select);
         //-------------- Assign data --------
         for(var i = 0; i < productOptions.length; i++) {
             var opt = productOptions[i];
@@ -32,94 +31,99 @@
               select.appendChild(el);
             }
         }
+        if(assignColumn){
+          const subtitle = assignColumn.getElementsByClassName( 'ct-subtitle' )[0];
+          subtitle.textContent = object.details;
+    
+          const thumbnail = assignColumn.getElementsByClassName( 'ct-thumbnail' )[0].getElementsByClassName('ct-thumbnail-img')[0];
+          thumbnail.src = object.thumbnail;
+    
+          const variants = assignColumn.getElementsByClassName( 'ct-variants' )[0];
+          variants.innerHTML = object.variants;
+    
+          const price = assignColumn.getElementsByClassName( 'ct-price' )[0];
+          price.textContent = object.price;
+    
+          const buyButton = assignColumn.getElementsByClassName( 'ct-buy-button' )[0];
+          buyButton.dataset.value  = object.link;
+           //---SHOP NOW-/
+          const shopNow = assignColumn.getElementsByClassName( 'ct-shop-now-big' )[0];
+          shopNow.dataset.value = object.link;
   
-        const subtitle = assignColumn.getElementsByClassName( 'ct-subtitle' )[0];
-        subtitle.textContent = object.details;
+          
+          const dimension = assignColumn.getElementsByClassName( 'ct-dimension' )[0].getElementsByClassName('ct-dimension-img')[0];
+          dimension.src = object.dimensions;
+    
+          const description = assignColumn.getElementsByClassName( 'ct-description' )[0];
+          description.textContent = object.description;
+    
+          //--- Features ---/
+    
+          const coolsTo = assignColumn.getElementsByClassName( 'ct-feature-coolsTo' )[0];
+          coolsTo.innerHTML = object.coolsTo;
+    
+          const heatsTo = assignColumn.getElementsByClassName( 'ct-feature-heatsTo' )[0];
+          heatsTo.innerHTML = object.heatsTo;
+    
+          const coolingPower = assignColumn.getElementsByClassName( 'ct-feature-coolingPower' )[0];
+          coolingPower.innerHTML = object.coolingPower;
+    
+          const electricalRequirements = assignColumn.getElementsByClassName( 'ct-feature-electricalRequirements' )[0];
+          electricalRequirements.innerHTML = object.electricalRequirements;
+          
+          const plumbingRequirements = assignColumn.getElementsByClassName( 'ct-feature-plumbingRequirements' )[0];
+          plumbingRequirements.innerHTML = object.plumbingRequirements;
+          
+          const setupTime = assignColumn.getElementsByClassName( 'ct-feature-setupTime' )[0];
+          setupTime.innerHTML = object.setupTime;
   
-        const thumbnail = assignColumn.getElementsByClassName( 'ct-thumbnail' )[0].getElementsByClassName('ct-thumbnail-img')[0];
-        thumbnail.src = object.thumbnail;
+          const warranty = assignColumn.getElementsByClassName( 'ct-feature-warranty' )[0];
+          warranty.innerHTML = object.warranty;
   
-        const variants = assignColumn.getElementsByClassName( 'ct-variants' )[0];
-        variants.innerHTML = object.variants;
+          const insulatedTub = assignColumn.getElementsByClassName( 'ct-feature-insulatedTub' )[0];
+          insulatedTub.innerHTML = object.insulatedTub;
+    
+          const outdoorUse = assignColumn.getElementsByClassName( 'ct-feature-outdoorUse' )[0];
+          outdoorUse.innerHTML = object.outdoorUse;
+    
+          const filter = assignColumn.getElementsByClassName( 'ct-feature-filter' )[0];
+          filter.innerHTML = object.filter;
+    
+          const sanitation = assignColumn.getElementsByClassName( 'ct-feature-sanitationKit' )[0];
+          sanitation.innerHTML = object.sanitation;
+    
+          const ozone = assignColumn.getElementsByClassName( 'ct-feature-ozone' )[0];
+          ozone.innerHTML = object.ozone;
   
-        const price = assignColumn.getElementsByClassName( 'ct-price' )[0];
-        price.textContent = object.price;
+          const weightEmpty = assignColumn.getElementsByClassName( 'ct-feature-weightEmpty' )[0];
+          weightEmpty.innerHTML = object.weightEmpty;
   
-        const buyButton = assignColumn.getElementsByClassName( 'ct-buy-button' )[0];
-        buyButton.href = object.link;
+          const weightFilled = assignColumn.getElementsByClassName( 'ct-feature-weightFilled' )[0];
+          weightFilled.innerHTML = object.weightFilled;
   
-        const dimension = assignColumn.getElementsByClassName( 'ct-dimension' )[0].getElementsByClassName('ct-dimension-img')[0];
-        dimension.src = object.dimensions;
+          const capacity = assignColumn.getElementsByClassName( 'ct-feature-capacity' )[0];
+          capacity.innerHTML = object.capacity;
+          
+          const connectivity = assignColumn.getElementsByClassName( 'ct-feature-connectivity' )[0];
+          connectivity.innerHTML = object.connectivity;
   
-        const description = assignColumn.getElementsByClassName( 'ct-description' )[0];
-        description.textContent = object.description;
+          const insultatedTubCover = assignColumn.getElementsByClassName( 'ct-feature-insultatedTubCover' )[0];
+          insultatedTubCover.innerHTML = object.insultatedTubCover;
+    
+          const light = assignColumn.getElementsByClassName( 'ct-feature-light' )[0];
+          light.innerHTML = object.light;
   
-        //--- Features ---/
-  
-        const coolsTo = assignColumn.getElementsByClassName( 'ct-feature-coolsTo' )[0];
-        coolsTo.innerHTML = object.coolsTo;
-  
-        const heatsTo = assignColumn.getElementsByClassName( 'ct-feature-heatsTo' )[0];
-        heatsTo.innerHTML = object.heatsTo;
-  
-        const coolingPower = assignColumn.getElementsByClassName( 'ct-feature-coolingPower' )[0];
-        coolingPower.innerHTML = object.coolingPower;
-  
-        const electricalRequirements = assignColumn.getElementsByClassName( 'ct-feature-electricalRequirements' )[0];
-        electricalRequirements.innerHTML = object.electricalRequirements;
-        
-        const plumbingRequirements = assignColumn.getElementsByClassName( 'ct-feature-plumbingRequirements' )[0];
-        plumbingRequirements.innerHTML = object.plumbingRequirements;
-        
-        const setupTime = assignColumn.getElementsByClassName( 'ct-feature-setupTime' )[0];
-        setupTime.innerHTML = object.setupTime;
-
-        const warranty = assignColumn.getElementsByClassName( 'ct-feature-warranty' )[0];
-        warranty.innerHTML = object.warranty;
-
-        const insulatedTub = assignColumn.getElementsByClassName( 'ct-feature-insulatedTub' )[0];
-        insulatedTub.innerHTML = object.insulatedTub;
-  
-        const outdoorUse = assignColumn.getElementsByClassName( 'ct-feature-outdoorUse' )[0];
-        outdoorUse.innerHTML = object.outdoorUse;
-  
-        const filter = assignColumn.getElementsByClassName( 'ct-feature-filter' )[0];
-        filter.innerHTML = object.filter;
-  
-        const sanitation = assignColumn.getElementsByClassName( 'ct-feature-sanitationKit' )[0];
-        sanitation.innerHTML = object.sanitation;
-  
-        const ozone = assignColumn.getElementsByClassName( 'ct-feature-ozone' )[0];
-        ozone.innerHTML = object.ozone;
-
-        const weightEmpty = assignColumn.getElementsByClassName( 'ct-feature-weightEmpty' )[0];
-        weightEmpty.innerHTML = object.weightEmpty;
-
-        const weightFilled = assignColumn.getElementsByClassName( 'ct-feature-weightFilled' )[0];
-        weightFilled.innerHTML = object.weightFilled;
-
-        const capacity = assignColumn.getElementsByClassName( 'ct-feature-capacity' )[0];
-        capacity.innerHTML = object.capacity;
-        
-        const connectivity = assignColumn.getElementsByClassName( 'ct-feature-connectivity' )[0];
-        connectivity.innerHTML = object.connectivity;
-
-        const insultatedTubCover = assignColumn.getElementsByClassName( 'ct-feature-insultatedTubCover' )[0];
-        insultatedTubCover.innerHTML = object.insultatedTubCover;
-  
-        const light = assignColumn.getElementsByClassName( 'ct-feature-light' )[0];
-        light.innerHTML = object.light;
-
-        //---SHOP NOW-/
-        const shopNow = assignColumn.getElementsByClassName( 'ct-shop-now' )[0];
-        shopNow.href = object.link;
-        
-        columnId++;
+         
+          
+          columnId++;
+        }
       }
     }
     
   }, false);
-  
+   window.openTab = function openTab(link){
+    window.open(link, "_blank");
+  }
   window.changeProduct = function changeProduct(component) {
     const url = component.value;
     const columnId = component.id.substring(component.id.length - 1);
@@ -141,7 +145,7 @@
     price.textContent = object.price;
 
     const buyButton = assignColumn.getElementsByClassName( 'ct-buy-button' )[0];
-    buyButton.href = object.link;
+    buyButton.dataset.value = object.link;
 
     const dimension = assignColumn.getElementsByClassName( 'ct-dimension' )[0].getElementsByClassName('ct-dimension-img')[0];
     dimension.src = object.dimensions;
@@ -206,8 +210,8 @@
     light.innerHTML = object.light;
 
     //---SHOP NOW-/
-    const shopNow = assignColumn.getElementsByClassName( 'ct-shop-now' )[0];
-    shopNow.href = object.link;
+    const shopNow = assignColumn.getElementsByClassName( 'ct-shop-now-big' )[0];
+    shopNow.dataset.value = object.link;
   }
   
 </script>
@@ -243,7 +247,7 @@
 
               <!-- Transparent Image -->
               <div class="ct-thumbnail">
-                  <img src="/" class="ct-thumbnail-img" width="280px" height="100%">
+                  <img src="/" class="ct-thumbnail-img" width="280px" height="100%" style="max-width:100%">
               </div>
 
               <!-- Variants -->
@@ -260,7 +264,7 @@
 
               <div class="ct-price"></div>
 
-              <a target="_blank" href="#" class="ct-buy-button">Buy</a>
+              <button onClick="openTab(this.dataset.value)"  class="ct-buy-button" data-value="">Buy</button>
               <!-- -------------------------------- Separator ----------------------------- -->
               <div class="ct-separator"></div>
 
@@ -439,7 +443,9 @@
                       width="40px"
                       height="40px"
                     >
-                    <div class="ct-feature-title ct-feature-weightEmpty">
+                    <div class="ct-feature-title">
+                      <p style="margin-bottom:20px">Weight Empty (Lbs)</p>
+                      <p class="ct-feature-weightEmpty"></p>
                     </div>
                   </div>
                 </div>
@@ -452,7 +458,9 @@
                       width="40px"
                       height="40px"
                     >
-                    <div class="ct-feature-title ct-feature-weightFilled">
+                    <div class="ct-feature-title">
+                      <p style="margin-bottom:20px">Weight Filled (Lbs)</p>
+                      <p class="ct-feature-weightFilled"></p>
                     </div>
                   </div>
                 </div>
@@ -465,7 +473,9 @@
                       width="40px"
                       height="40px"
                     >
-                    <div class="ct-feature-title ct-feature-capacity">
+                    <div class="ct-feature-title">
+                      <p style="margin-bottom:20px">Capacity (Gallons)</p>
+                      <p class="ct-feature-capacity"></p>
                     </div>
                   </div>
                 </div>
@@ -515,7 +525,7 @@
             </div>
              <div class="ct-separator"></div>
               <!-- ----------------------------------- Separator ----------------------- -->
-            <a href="#" class="ct-shop-now">Buy</a>
+            <button onClick="openTab(this.dataset.value)"  class="ct-shop-now-big" data-value="">Buy</button>
           </div>
         </div>
       {% endfor %}
